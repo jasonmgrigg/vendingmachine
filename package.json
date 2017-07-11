@@ -13,7 +13,8 @@
   "dependencies": {
     "body-parser": "*",
     "express": "^4.15.3",
-    "mongoose": "^4.11.1"
+    "mongoose": "^4.11.1",
+    "supertest": "^3.0.0"
   },
   "author": "Jason M. Grigg",
   "license": "ISC",

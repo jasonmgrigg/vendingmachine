@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+const getItems = require("./items");
 
 app.use(bodyParser.json());
 
@@ -18,7 +19,7 @@ app.get('/', function(req, res){
   res.send('Please use /api/...');
 });
 
-//Gets all item information
+// Gets all item information
 app.get('/api/customer/items', function(req, res){
   Item.getItems(function(err, items){
     if(err){
@@ -27,6 +28,7 @@ app.get('/api/customer/items', function(req, res){
     res.json(items);
   });
 });
+
 
 //Gets all purchases information
 app.get('/api/vendor/purchases', function(req, res){

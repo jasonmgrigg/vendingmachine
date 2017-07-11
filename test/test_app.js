@@ -1,17 +1,16 @@
 const assert = require("assert")
 const request = require("supertest")
 const app = require("../app")
-const Visit = require("../models/visit")
+const Items = require("../models/items")
 
-describe("GET /hello", function () {
+describe("GET /api/customer/items", function () {
     beforeEach("clear visits", function (done) {
-        Visit.remove({}).then(function () { done() })
+        Items.remove({}).then(function () { done() })
     })
 
-    it("should say hello", function (done) {
+    it("should return items", function (done) {
         request(app)
-            .get("/hello")
-            .expect(200)
+            .get("/")
             .expect("Hello!")
             .end(done)
     })
